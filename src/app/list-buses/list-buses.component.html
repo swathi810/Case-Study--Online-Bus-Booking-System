@@ -1,0 +1,18 @@
+
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th>Bus Number</th><th>Travels</th><th>Source</th><th>Destination</th><th>Number of Seats</th><th>Remove Bus</th>
+    </tr>
+    <tr *ngFor="let f of buses">
+        <td>{{ f.busNumber }}</td>
+        <td>{{ f.travels }}</td>
+        <td>{{ f.source }}</td>
+        <td>{{ f.destiny }}</td>
+        <td>{{f.seatsCount}}</td>
+        <td><button class="btn btn-danger" (click)="delete(f.busNumber)">Delete</button></td>
+        
+    </tr>
+    </thead>
+</table>
+

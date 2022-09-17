@@ -1,0 +1,37 @@
+
+<form (ngSubmit)="save()" class="was-validated" #addFrm="ngForm">
+    
+    <div class="form-group">
+        <label for="code">Bus Number</label> 
+        <input name="code" class="form-control" [(ngModel)]="bus.busNumber" pattern="[0-9]{3,}" required>
+        <div class="invalid-feedback">Please fill out Bus Number</div>
+    </div>
+    <div class="form-group">
+        <label for="carrier">Travels Name</label>
+        <select name="carrier" class="form-control" [(ngModel)]="bus.travels" required>
+            <option *ngFor="let car of travels" [value]="car">{{ car }}</option>
+        </select>
+        <div class="invalid-feedback">Please select Bus Travels.</div>
+    </div>
+    <div class="form-group">
+        <label for="source">Source</label>
+        <select name="source" class="form-control" [(ngModel)]="bus.source" required>
+            <option *ngFor="let src of cities" [value]="src">{{ src }}</option>
+        </select>
+        <div class="invalid-feedback">Please select source city of travel.</div>
+    </div>
+    <div class="form-group">
+        <label for="destiny">Destination</label> 
+        <select name="destiny" class="form-control" [(ngModel)]="bus.destiny" required>
+            <option *ngFor="let dest of cities" [value]="dest">{{ dest }}</option>
+        </select>
+        <div class="invalid-feedback">Please select destination city of travel.</div>
+    </div>
+    <div class="form-group">
+        <label for="seat">Number of seats</label> 
+        <input name="seatsCount" class="form-control" [(ngModel)]="bus.seatsCount" pattern="[0-9]{2,}" required>
+        <div class="invalid-feedback">Please fill out Number of seats</div>
+    </div>
+    
+    <button type="submit" class="btn btn-primary" [disabled]="!addFrm.valid">Save Flight</button>
+</form>

@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav">
+    <a class="navbar-brand" href="#">Online Bus Booking Application</a>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['add']">Add Bus</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['list']">List Buses</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['find']">Search Bus</a>
+    </li>
+    
+  </ul>
+</nav>
+<br>
+<div class="container">
+<router-outlet></router-outlet>
+</div>
